@@ -4,9 +4,9 @@ import sys
 # External Packages | PyQt5
 from PyQt5.QtWidgets import QMainWindow,QApplication, QTabWidget
 
-from app.tabs.central_tab import CentralTab
+from tabs.central_tab import CentralTab
 
-from app.static.constants import _APPLICATION_NAME, _WINDOW_MAIN_APP_WIDTH, _WINDOW_MAIN_APP_HEIGHT
+from static.constants import _APPLICATION_NAME, _WINDOW_MAIN_APP_WIDTH, _WINDOW_MAIN_APP_HEIGHT
 
 class App(QMainWindow):
 
