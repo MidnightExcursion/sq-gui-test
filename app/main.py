@@ -5,6 +5,7 @@ import sys
 from PyQt5.QtWidgets import QMainWindow,QApplication, QTabWidget
 
 from tabs.central_tab import CentralTab
+from tabs.logging_tab import LoggingTab
 
 from static.constants import _APPLICATION_NAME, _WINDOW_MAIN_APP_WIDTH, _WINDOW_MAIN_APP_HEIGHT
 
@@ -36,10 +37,14 @@ class App(QMainWindow):
         self.setCentralWidget(self.central_widget)
 
         # Initialize the central widget's tabs:
-        self.tab1 = CentralTab()
+        self.central_tab = CentralTab()
+        
+        # Initialize the diagnostic tab:
+        self.logging_tab = LoggingTab()
 
-        # Add the tab to the central widget
-        self.central_widget.addTab(self.tab1, "Main Display")
+        # Add the tabs to the central widget
+        self.central_widget.addTab(self.central_tab, "Main Display")
+        self.central_widget.addTab(self.logging_tab, "Application Logs")
 
 
 if __name__ == "__main__":
