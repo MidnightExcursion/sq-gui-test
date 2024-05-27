@@ -1,14 +1,5 @@
-def import_package_os():
-    """
-    
-    """
-    try:
-        import os
-        return os
-    except ImportError:
-        print(f"> ERROR: Unable to import OS. Exiting...")
-        return None
-    
+import os 
+
 def create_folder(folder_name: str = "default_folder_name") -> bool:
     """
     # Description:
@@ -23,8 +14,6 @@ def create_folder(folder_name: str = "default_folder_name") -> bool:
     if folder_name == None:
         print(f"> Supplied argument for folder name was NoneType. Exiting...")
         return False
-
-    os = import_package_os()
     
     if os is not None:
         if not os.path.exists(folder_name):
@@ -57,8 +46,6 @@ def find_folder(folder_name: str = "default_folder_name") -> bool | None:
     if folder_name == None:
         print(f"> Supplied argument for folder name was NoneType. Exiting...")
         return None
-    
-    os = import_package_os()
 
     if os is not None:
         return os.path.join(os.getcwd(), folder_name)
